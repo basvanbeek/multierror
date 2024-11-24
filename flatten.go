@@ -1,3 +1,4 @@
+// Copyright (c) Bas van Beek 2024.
 // Copyright (c) HashiCorp, Inc.
 // SPDX-License-Identifier: MPL-2.0
 

@@ -1,4 +1,4 @@
-name: hashicorp/go-multierror/go-multierror
+name: basvanbeek/multierror/multierror
 on:
   push:
 
@@ -44,11 +44,11 @@ jobs:
       - run: |
           go version
           go env
-      - run: mkdir -p "$TEST_RESULTS_PATH/go-multierror"
+      - run: mkdir -p "$TEST_RESULTS_PATH/multierror"
       - name: Run go tests
         env:
           PLATFORM: linux
-          REPORT_FILE: ${{ env.TEST_RESULTS_PATH }}/go-multierror/gotestsum-report.xml
+          REPORT_FILE: ${{ env.TEST_RESULTS_PATH }}/multierror/gotestsum-report.xml
         run: |-
           gotestsum --format=short-verbose --junitfile ${{ env.REPORT_FILE }} -- -p 2 ./...
       - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
@@ -82,7 +82,7 @@ jobs:
       - name: Run go tests
         env:
           PLATFORM: win
-          REPORT_FILE: ${{ env.TEST_RESULTS_PATH }}/go-multierror/gotestsum-report.xml
+          REPORT_FILE: ${{ env.TEST_RESULTS_PATH }}/multierror/gotestsum-report.xml
         run: |-
           gotestsum.exe --format=short-verbose --junitfile ${{ env.REPORT_FILE }} -- -p 2 ./...
       - uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3

@@ -1,13 +1,13 @@
-# go-multierror
+# multierror
 
-[![CircleCI](https://img.shields.io/circleci/build/github/hashicorp/go-multierror/master)](https://circleci.com/gh/hashicorp/go-multierror)
-[![Go Reference](https://pkg.go.dev/badge/github.com/hashicorp/go-multierror.svg)](https://pkg.go.dev/github.com/hashicorp/go-multierror)
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/hashicorp/go-multierror)
+[![CircleCI](https://img.shields.io/circleci/build/github/basvanbeek/multierror/main)](https://circleci.com/gh/basvanbeek/multierror)
+[![Go Reference](https://pkg.go.dev/badge/github.com/basvanbeek/multierror.svg)](https://pkg.go.dev/github.com/basvanbeek/multierror)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/basvanbeek/multierror)
 
-[circleci]: https://app.circleci.com/pipelines/github/hashicorp/go-multierror
-[godocs]: https://pkg.go.dev/github.com/hashicorp/go-multierror
+[circleci]: https://app.circleci.com/pipelines/github/basvanbeek/multierror
+[godocs]: https://pkg.go.dev/github.com/basvanbeek/multierror
 
-`go-multierror` is a package for Go that provides a mechanism for
+`multierror` is a package for Go that provides a mechanism for
 representing a list of `error` values as a single `error`.
 
 This allows a function in Go to return an `error` that might actually
@@ -15,39 +15,35 @@ be a list of errors. If the caller knows this, they can unwrap the
 list and access the errors. If the caller doesn't know, the error
 formats to a nice human-readable format.
 
-`go-multierror` is fully compatible with the Go standard library
+`multierror` is fully compatible with the Go standard library
 [errors](https://golang.org/pkg/errors/) package, including the
 functions `As`, `Is`, and `Unwrap`. This provides a standardized approach
 for introspecting on error values.
 
 ## Installation and Docs
 
-Install using `go get github.com/hashicorp/go-multierror`.
+Install using `go get github.com/basvanbeek/multierror`.
 
 Full documentation is available at
-https://pkg.go.dev/github.com/hashicorp/go-multierror
+https://pkg.go.dev/github.com/basvanbeek/multierror
 
 ### Requires go version 1.13 or newer
 
-`go-multierror` requires go version 1.13 or newer. Go 1.13 introduced
+`multierror` requires go version 1.13 or newer. Go 1.13 introduced
 [error wrapping](https://golang.org/doc/go1.13#error_wrapping), which
 this library takes advantage of.
-
-If you need to use an earlier version of go, you can use the
-[v1.0.0](https://github.com/hashicorp/go-multierror/tree/v1.0.0)
-tag, which doesn't rely on features in go 1.13.
 
 If you see compile errors that look like the below, it's likely that
 you're on an older version of go:
 
 ```
-/go/src/github.com/hashicorp/go-multierror/multierror.go:112:9: undefined: errors.As
-/go/src/github.com/hashicorp/go-multierror/multierror.go:117:9: undefined: errors.Is
+/go/src/github.com/basvanbeek/multierror/multierror.go:112:9: undefined: errors.As
+/go/src/github.com/basvanbeek/multierror/multierror.go:117:9: undefined: errors.Is
 ```
 
 ## Usage
 
-go-multierror is easy to use and purposely built to be unobtrusive in
+multierror is easy to use and purposely built to be unobtrusive in
 existing Go applications/libraries that may not be aware of it.
 
 **Building a list of errors**
