@@ -32,11 +32,7 @@ func TestErrorError_custom(t *testing.T) {
 }
 
 func TestErrorError_default(t *testing.T) {
-	expected := `2 errors occurred:
-	* foo
-	* bar
-
-`
+	expected := `2 errors occurred: foo; bar`
 
 	errors := []error{
 		errors.New("foo"),
